@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.3 on linux)" generated="2024-10-23T09:17:37.593918" rpa="false" schemaversion="5">
+<suite id="s1" name="Robo-Framework-App" source="/home/citco/Repositories/robo-framework-app">
+<suite id="s1-s1" name="Test" source="/home/citco/Repositories/robo-framework-app/test.robot">
+<kw name="Launch Browser" type="SETUP">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-23T09:17:38.024094" level="INFO">${options} = add_argument("--start-maximized")</msg>
+<var>${options}</var>
+<arg>add_argument("--start-maximized")</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-23T09:17:38.023332" elapsed="0.001078"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-23T09:17:38.025957" level="INFO">Opening browser 'chrome' to base url 'https://marmelab.com/react-admin-demo/' through remote server at 'http://172.17.0.1:4444'.</msg>
+<arg>${url}</arg>
+<arg>chrome</arg>
+<arg>remote_url=http://172.17.0.1:4444</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-23T09:17:38.025022" elapsed="6.411045"/>
+</kw>
+<arg>https://marmelab.com/react-admin-demo/</arg>
+<status status="PASS" start="2024-10-23T09:17:38.021301" elapsed="6.415603"/>
+</kw>
+<test id="s1-s1-t1" name="Test Case 2" line="44">
+<kw name="Check Customers With Zero Orders">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${CUSTOMERS_WITH_ZERO_ORDERS} is not None</arg>
+<arg>Fail</arg>
+<arg>Users With 0 Orders Found: ${CUSTOMERS_WITH_ZERO_ORDERS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-23T09:17:44.446119" elapsed="0.001542"/>
+</kw>
+<status status="PASS" start="2024-10-23T09:17:44.443044" elapsed="0.005301"/>
+</kw>
+<status status="PASS" start="2024-10-23T09:17:44.437400" elapsed="0.011822"/>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-10-23T09:17:44.451984" elapsed="0.320023"/>
+</kw>
+<status status="PASS" start="2024-10-23T09:17:37.670796" elapsed="7.101530"/>
+</suite>
+<status status="PASS" start="2024-10-23T09:17:37.616797" elapsed="7.161853"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robo-Framework-App">Robo-Framework-App</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Test">Robo-Framework-App.Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-10-23T09:17:38.015535" level="WARN">Imported resource file '/home/citco/Repositories/robo-framework-app/resource/SampleResource.resource' is empty.</msg>
+</errors>
+</robot>
