@@ -1,8 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    ./libraries/Users.py
-Library    ./env/lib/python3.12/site-packages/robot/libraries/Collections.py
-Variables    ./variables/variable.py
+Library    ../libraries/Users.py
+Library    ../env/lib/python3.12/site-packages/robot/libraries/Collections.py
+Variables    ../variables/variable.py
 
 Suite Setup    Launch Browser    https://marmelab.com/react-admin-demo/
 Suite Teardown    Close All Browsers
@@ -16,22 +16,6 @@ ${CUSTOMERS_WITH_ZERO_ORDERS}    None
 
 *** Test Cases ***
 Test Case 1
-    # Input Text    id:APjFqb    Munggo Recipe Panlasang Pinoy
-    # Sleep    5s
-    # ${query}    Get Element Attribute    id:APjFqb    value
-    # Should Be Equal As Strings    ${query}    Ang pogi ni Jacinto Sobra!
-
-    # Press Keys    id:APjFqb    ENTER
-    # Sleep    5s
-    # Login User    demo    demo
-    # Go To Link    Customers
-    # Display All Names
-    # Sleep     5s
-    
-    # Go To Link    Customers
-    # Open Add Identity
-    # Add User    ${USERS}[0]
-    # Log To Console    ${USERS}[0]
     Fetch Data
     Login User    demo    demo
     Add All User    ${USERS}
