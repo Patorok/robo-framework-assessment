@@ -22,10 +22,10 @@ Test Case 1
     Sleep    3s
     Display All Names
     Verify Users
-    Sleep     3s
 
 Test Case 2
-    Login User    demo    demo
+    ${username_visible}=    Run Keyword And Return Status    Element Should Be Visible    name:username
+    Run Keyword If    ${username_visible}    Login User    demo    demo
     Go To Link    Customers
     Display All Names
     Check Customers With Zero Orders
