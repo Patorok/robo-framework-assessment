@@ -1,60 +1,2261 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.12.3 on linux)" generated="2024-10-23T09:17:37.593918" rpa="false" schemaversion="5">
-<suite id="s1" name="Robo-Framework-App" source="/home/citco/Repositories/robo-framework-app">
-<suite id="s1-s1" name="Test" source="/home/citco/Repositories/robo-framework-app/test.robot">
+<robot generator="Robot 7.1.1 (Python 3.12.3 on linux)" generated="2024-10-23T12:38:00.278163" rpa="false" schemaversion="5">
+<suite id="s1" name="Robo-Framework-Assessment" source="/home/citco/Desktop/robo-framework-assessment">
+<suite id="s1-s1" name="Test" source="/home/citco/Desktop/robo-framework-assessment/test">
+<suite id="s1-s1-s1" name="Test" source="/home/citco/Desktop/robo-framework-assessment/test/test.robot">
 <kw name="Launch Browser" type="SETUP">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-10-23T09:17:38.024094" level="INFO">${options} = add_argument("--start-maximized")</msg>
+<msg time="2024-10-23T12:38:01.789074" level="INFO">${options} = add_argument("--start-maximized")</msg>
 <var>${options}</var>
 <arg>add_argument("--start-maximized")</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-10-23T09:17:38.023332" elapsed="0.001078"/>
+<status status="PASS" start="2024-10-23T12:38:01.788269" elapsed="0.001114"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-10-23T09:17:38.025957" level="INFO">Opening browser 'chrome' to base url 'https://marmelab.com/react-admin-demo/' through remote server at 'http://172.17.0.1:4444'.</msg>
+<msg time="2024-10-23T12:38:01.790733" level="INFO">Opening browser 'chrome' to base url 'https://marmelab.com/react-admin-demo/' through remote server at 'http://172.17.0.1:4444'.</msg>
 <arg>${url}</arg>
 <arg>chrome</arg>
 <arg>remote_url=http://172.17.0.1:4444</arg>
 <arg>options=${options}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-10-23T09:17:38.025022" elapsed="6.411045"/>
+<status status="PASS" start="2024-10-23T12:38:01.789896" elapsed="14.972208"/>
 </kw>
 <arg>https://marmelab.com/react-admin-demo/</arg>
-<status status="PASS" start="2024-10-23T09:17:38.021301" elapsed="6.415603"/>
+<status status="PASS" start="2024-10-23T12:38:01.785468" elapsed="14.983439"/>
 </kw>
-<test id="s1-s1-t1" name="Test Case 2" line="44">
-<kw name="Check Customers With Zero Orders">
+<test id="s1-s1-s1-t1" name="Test Case 2" line="26">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:18.151930" level="INFO">Element 'name:username' is displayed.</msg>
+<arg>name:username</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-23T12:38:16.779902" elapsed="1.372515"/>
+</kw>
+<msg time="2024-10-23T12:38:18.153140" level="INFO">${username_visible} = True</msg>
+<var>${username_visible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>name:username</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-23T12:38:16.775127" elapsed="1.378845"/>
+</kw>
 <kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Login User">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:18.160326" level="INFO">Typing text 'demo' into text field 'name:username'.</msg>
+<arg>name:username</arg>
+<arg>${user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:18.156702" elapsed="0.366178"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:18.524084" level="INFO">Typing text 'demo' into text field 'name:password'.</msg>
+<arg>name:password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:18.523314" elapsed="0.713665"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:19.238386" level="INFO">Clicking button '//button'.</msg>
+<arg>//button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:19.237419" elapsed="1.083474"/>
+</kw>
+<arg>demo</arg>
+<arg>demo</arg>
+<status status="PASS" start="2024-10-23T12:38:18.155352" elapsed="2.165908"/>
+</kw>
+<arg>${username_visible}</arg>
+<arg>Login User</arg>
+<arg>demo</arg>
+<arg>demo</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-23T12:38:18.154613" elapsed="2.166869"/>
+</kw>
+<kw name="Go To Link">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:20.350896" level="INFO">Clicking element '//a[text()="Customers"]'.</msg>
+<arg>//a[text()="${text}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:20.334428" elapsed="4.350614"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//tbody//tr</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-23T12:38:24.685557" elapsed="1.135561"/>
+</kw>
+<arg>Customers</arg>
+<status status="PASS" start="2024-10-23T12:38:20.326371" elapsed="5.495264"/>
+</kw>
+<kw name="Display All Names">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//tbody//tr</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-23T12:38:25.823631" elapsed="0.116433"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-10-23T12:38:25.940977" level="INFO">${name_list} = []</msg>
+<var>${name_list}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-10-23T12:38:25.940465" elapsed="0.001481"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:25.971474" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="fb9f74cfba3c4341ce682d59e19cc380", element="f.BF03349CF1F06EBE4828BD75BB2E892B.d.E40F3C9827CDE37E490A592E2D4AC46D.e.97")&gt;, &lt;selenium.webdriv...</msg>
+<var>${elements}</var>
+<arg>//tbody//tr</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:25.942367" elapsed="0.030185"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2024-10-23T12:38:25.973572" level="INFO">Length is 25.</msg>
+<msg time="2024-10-23T12:38:25.975093" level="INFO">${length} = 25</msg>
+<var>${length}</var>
+<arg>${elements}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2024-10-23T12:38:25.972990" elapsed="0.002344"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:25.977698" level="INFO">${locator} = ((//tbody//tr)[1]//td)[2]//a//div</msg>
+<var>${locator}</var>
+<arg>((//tbody//tr)[${i}]//td)[2]//a//div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-23T12:38:25.977149" elapsed="0.000752"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:26.056430" level="INFO">${name_text} = S
+Santa Ritchie</msg>
+<var>${name_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:25.978220" elapsed="0.078628"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:26.477940" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-23T12:38:26.478365" level="FAIL">Page should have contained element '((//tbody//tr)[1]//td)[2]//a//div//img' but did not.</msg>
+<arg>${locator}//img</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2024-10-23T12:38:26.057838" elapsed="0.804759">Page should have contained element '((//tbody//tr)[1]//td)[2]//a//div//img' but did not.</status>
+</kw>
+<msg time="2024-10-23T12:38:26.864584" level="INFO">${status} = False</msg>
+<var>${status}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}//img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-23T12:38:26.057243" elapsed="0.808634"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:26.873316" level="INFO">${name_text} = Santa Ritchie</msg>
+<var>${name_text}</var>
+<arg>r"""${name_text}""".replace("\\n","")[1:]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:26.871278" elapsed="0.002561"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:26.869216" elapsed="0.005429"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:26.868979" elapsed="0.006007"/>
+</if>
+<kw name="Append To List" owner="Collections">
+<arg>${name_list}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:26.875424" elapsed="0.001254"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2024-10-23T12:38:25.976759" elapsed="0.900351"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:26.880796" level="INFO">${locator} = ((//tbody//tr)[2]//td)[2]//a//div</msg>
+<var>${locator}</var>
+<arg>((//tbody//tr)[${i}]//td)[2]//a//div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-23T12:38:26.878935" elapsed="0.002787"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:27.026157" level="INFO">${name_text} = R
+Rosanna Dibbert</msg>
+<var>${name_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:26.882853" elapsed="0.143904"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:27.260203" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-23T12:38:27.260873" level="FAIL">Page should have contained element '((//tbody//tr)[2]//td)[2]//a//div//img' but did not.</msg>
+<arg>${locator}//img</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2024-10-23T12:38:27.029482" elapsed="0.236368">Page should have contained element '((//tbody//tr)[2]//td)[2]//a//div//img' but did not.</status>
+</kw>
+<msg time="2024-10-23T12:38:27.266311" level="INFO">${status} = False</msg>
+<var>${status}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}//img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-23T12:38:27.027617" elapsed="0.241026"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:27.272155" level="INFO">${name_text} = Rosanna Dibbert</msg>
+<var>${name_text}</var>
+<arg>r"""${name_text}""".replace("\\n","")[1:]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:27.271151" elapsed="0.001267"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:27.269975" elapsed="0.003129"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:27.269435" elapsed="0.003816"/>
+</if>
+<kw name="Append To List" owner="Collections">
+<arg>${name_list}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:27.273457" elapsed="0.000588"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2024-10-23T12:38:26.877952" elapsed="0.396303"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:27.275650" level="INFO">${locator} = ((//tbody//tr)[3]//td)[2]//a//div</msg>
+<var>${locator}</var>
+<arg>((//tbody//tr)[${i}]//td)[2]//a//div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-23T12:38:27.275067" elapsed="0.001526"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:27.391010" level="INFO">${name_text} = Johnpaul Emmerich</msg>
+<var>${name_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:27.277011" elapsed="0.116000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:27.440211" level="INFO">Current page contains element '((//tbody//tr)[3]//td)[2]//a//div//img'.</msg>
+<arg>${locator}//img</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-10-23T12:38:27.395679" elapsed="0.046179"/>
+</kw>
+<msg time="2024-10-23T12:38:27.442218" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}//img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-23T12:38:27.393729" elapsed="0.048702"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${name_text}</var>
+<arg>r"""${name_text}""".replace("\\n","")[1:]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2024-10-23T12:38:27.446074" elapsed="0.000342"/>
+</kw>
+<status status="NOT RUN" start="2024-10-23T12:38:27.443382" elapsed="0.003300"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:27.443322" elapsed="0.004321"/>
+</if>
+<kw name="Append To List" owner="Collections">
+<arg>${name_list}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:27.447958" elapsed="0.001452"/>
+</kw>
+<var name="${i}">3</var>
+<status status="PASS" start="2024-10-23T12:38:27.274712" elapsed="0.175314"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:27.452213" level="INFO">${locator} = ((//tbody//tr)[4]//td)[2]//a//div</msg>
+<var>${locator}</var>
+<arg>((//tbody//tr)[${i}]//td)[2]//a//div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-23T12:38:27.450905" elapsed="0.002153"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:27.509246" level="INFO">${name_text} = Alvina Cronin</msg>
+<var>${name_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:27.453500" elapsed="0.055978"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:27.542187" level="INFO">Current page contains element '((//tbody//tr)[4]//td)[2]//a//div//img'.</msg>
+<arg>${locator}//img</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-10-23T12:38:27.510731" elapsed="0.031774"/>
+</kw>
+<msg time="2024-10-23T12:38:27.542855" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}//img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-23T12:38:27.509895" elapsed="0.033130"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${name_text}</var>
+<arg>r"""${name_text}""".replace("\\n","")[1:]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2024-10-23T12:38:27.544163" elapsed="0.000285"/>
+</kw>
+<status status="NOT RUN" start="2024-10-23T12:38:27.543316" elapsed="0.001422"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:27.543272" elapsed="0.001624"/>
+</if>
+<kw name="Append To List" owner="Collections">
+<arg>${name_list}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:27.545113" elapsed="0.001665"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2024-10-23T12:38:27.450500" elapsed="0.096655"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:27.551332" level="INFO">${locator} = ((//tbody//tr)[5]//td)[2]//a//div</msg>
+<var>${locator}</var>
+<arg>((//tbody//tr)[${i}]//td)[2]//a//div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-23T12:38:27.550502" elapsed="0.002256"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:27.608034" level="INFO">${name_text} = F
+Frances Beahan</msg>
+<var>${name_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:27.553434" elapsed="0.054857"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:27.840287" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-23T12:38:27.840726" level="FAIL">Page should have contained element '((//tbody//tr)[5]//td)[2]//a//div//img' but did not.</msg>
+<arg>${locator}//img</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2024-10-23T12:38:27.609547" elapsed="0.232533">Page should have contained element '((//tbody//tr)[5]//td)[2]//a//div//img' but did not.</status>
+</kw>
+<msg time="2024-10-23T12:38:27.842440" level="INFO">${status} = False</msg>
+<var>${status}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}//img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-23T12:38:27.608677" elapsed="0.236297"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:27.853209" level="INFO">${name_text} = Frances Beahan</msg>
+<var>${name_text}</var>
+<arg>r"""${name_text}""".replace("\\n","")[1:]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:27.848805" elapsed="0.004693"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:27.845341" elapsed="0.008548"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:27.845291" elapsed="0.009035"/>
+</if>
+<kw name="Append To List" owner="Collections">
+<arg>${name_list}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:27.854617" elapsed="0.000573"/>
+</kw>
+<var name="${i}">5</var>
+<status status="PASS" start="2024-10-23T12:38:27.547881" elapsed="0.307506"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:27.856841" level="INFO">${locator} = ((//tbody//tr)[6]//td)[2]//a//div</msg>
+<var>${locator}</var>
+<arg>((//tbody//tr)[${i}]//td)[2]//a//div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-23T12:38:27.856251" elapsed="0.000801"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:27.941114" level="INFO">${name_text} = Q
+Quinn Hills</msg>
+<var>${name_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:27.857392" elapsed="0.084458"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:28.345748" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-23T12:38:28.346136" level="FAIL">Page should have contained element '((//tbody//tr)[6]//td)[2]//a//div//img' but did not.</msg>
+<arg>${locator}//img</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2024-10-23T12:38:27.944223" elapsed="0.407130">Page should have contained element '((//tbody//tr)[6]//td)[2]//a//div//img' but did not.</status>
+</kw>
+<msg time="2024-10-23T12:38:28.354231" level="INFO">${status} = False</msg>
+<var>${status}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}//img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-23T12:38:27.942300" elapsed="0.412197"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:28.358038" level="INFO">${name_text} = Quinn Hills</msg>
+<var>${name_text}</var>
+<arg>r"""${name_text}""".replace("\\n","")[1:]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:28.357091" elapsed="0.001211"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:28.355962" elapsed="0.002660"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:28.355906" elapsed="0.002865"/>
+</if>
+<kw name="Append To List" owner="Collections">
+<arg>${name_list}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:28.359004" elapsed="0.002001"/>
+</kw>
+<var name="${i}">6</var>
+<status status="PASS" start="2024-10-23T12:38:27.855910" elapsed="0.505349"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:28.362803" level="INFO">${locator} = ((//tbody//tr)[7]//td)[2]//a//div</msg>
+<var>${locator}</var>
+<arg>((//tbody//tr)[${i}]//td)[2]//a//div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-23T12:38:28.362126" elapsed="0.005896"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:28.540930" level="INFO">${name_text} = M
+Marley Conn</msg>
+<var>${name_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:28.368502" elapsed="0.172974"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:28.864652" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-23T12:38:28.866348" level="FAIL">Page should have contained element '((//tbody//tr)[7]//td)[2]//a//div//img' but did not.</msg>
+<arg>${locator}//img</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2024-10-23T12:38:28.545630" elapsed="0.322604">Page should have contained element '((//tbody//tr)[7]//td)[2]//a//div//img' but did not.</status>
+</kw>
+<msg time="2024-10-23T12:38:28.869200" level="INFO">${status} = False</msg>
+<var>${status}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}//img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-23T12:38:28.543336" elapsed="0.326300"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:28.872220" level="INFO">${name_text} = Marley Conn</msg>
+<var>${name_text}</var>
+<arg>r"""${name_text}""".replace("\\n","")[1:]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:28.870920" elapsed="0.002717"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:28.870051" elapsed="0.003967"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:28.870000" elapsed="0.004153"/>
+</if>
+<kw name="Append To List" owner="Collections">
+<arg>${name_list}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:28.874592" elapsed="0.000547"/>
+</kw>
+<var name="${i}">7</var>
+<status status="PASS" start="2024-10-23T12:38:28.361714" elapsed="0.514594"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:28.877879" level="INFO">${locator} = ((//tbody//tr)[8]//td)[2]//a//div</msg>
+<var>${locator}</var>
+<arg>((//tbody//tr)[${i}]//td)[2]//a//div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-23T12:38:28.877221" elapsed="0.000925"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:28.944500" level="INFO">${name_text} = J
+Jonathan Effertz</msg>
+<var>${name_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:28.878620" elapsed="0.066145"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:29.227571" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-23T12:38:29.228308" level="FAIL">Page should have contained element '((//tbody//tr)[8]//td)[2]//a//div//img' but did not.</msg>
+<arg>${locator}//img</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2024-10-23T12:38:28.945722" elapsed="0.293766">Page should have contained element '((//tbody//tr)[8]//td)[2]//a//div//img' but did not.</status>
+</kw>
+<msg time="2024-10-23T12:38:29.240390" level="INFO">${status} = False</msg>
+<var>${status}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}//img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-23T12:38:28.945140" elapsed="0.295941"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:29.244842" level="INFO">${name_text} = Jonathan Effertz</msg>
+<var>${name_text}</var>
+<arg>r"""${name_text}""".replace("\\n","")[1:]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:29.242929" elapsed="0.002339"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:29.241732" elapsed="0.004013"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:29.241638" elapsed="0.004371"/>
+</if>
+<kw name="Append To List" owner="Collections">
+<arg>${name_list}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:29.246420" elapsed="0.004032"/>
+</kw>
+<var name="${i}">8</var>
+<status status="PASS" start="2024-10-23T12:38:28.876822" elapsed="0.374141"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:29.258288" level="INFO">${locator} = ((//tbody//tr)[9]//td)[2]//a//div</msg>
+<var>${locator}</var>
+<arg>((//tbody//tr)[${i}]//td)[2]//a//div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-23T12:38:29.257180" elapsed="0.001474"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:29.326791" level="INFO">${name_text} = A
+Ana Lesch</msg>
+<var>${name_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:29.259151" elapsed="0.067876"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:29.630053" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-23T12:38:29.632306" level="FAIL">Page should have contained element '((//tbody//tr)[9]//td)[2]//a//div//img' but did not.</msg>
+<arg>${locator}//img</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2024-10-23T12:38:29.328233" elapsed="0.310366">Page should have contained element '((//tbody//tr)[9]//td)[2]//a//div//img' but did not.</status>
+</kw>
+<msg time="2024-10-23T12:38:29.639049" level="INFO">${status} = False</msg>
+<var>${status}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}//img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-23T12:38:29.327421" elapsed="0.311869"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:29.642060" level="INFO">${name_text} = Ana Lesch</msg>
+<var>${name_text}</var>
+<arg>r"""${name_text}""".replace("\\n","")[1:]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:29.641214" elapsed="0.001118"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:29.640436" elapsed="0.002875"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:29.640354" elapsed="0.003372"/>
+</if>
+<kw name="Append To List" owner="Collections">
+<arg>${name_list}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:29.644038" elapsed="0.000852"/>
+</kw>
+<var name="${i}">9</var>
+<status status="PASS" start="2024-10-23T12:38:29.254862" elapsed="0.390271"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:29.647244" level="INFO">${locator} = ((//tbody//tr)[10]//td)[2]//a//div</msg>
+<var>${locator}</var>
+<arg>((//tbody//tr)[${i}]//td)[2]//a//div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-23T12:38:29.646355" elapsed="0.004556"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:29.745961" level="INFO">${name_text} = B
+Bernice Corwin</msg>
+<var>${name_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:29.651862" elapsed="0.097840"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:30.107956" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-23T12:38:30.108356" level="FAIL">Page should have contained element '((//tbody//tr)[10]//td)[2]//a//div//img' but did not.</msg>
+<arg>${locator}//img</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2024-10-23T12:38:29.753710" elapsed="0.357158">Page should have contained element '((//tbody//tr)[10]//td)[2]//a//div//img' but did not.</status>
+</kw>
+<msg time="2024-10-23T12:38:30.111249" level="INFO">${status} = False</msg>
+<var>${status}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}//img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-23T12:38:29.751909" elapsed="0.359564"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:30.130097" level="INFO">${name_text} = Bernice Corwin</msg>
+<var>${name_text}</var>
+<arg>r"""${name_text}""".replace("\\n","")[1:]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:30.120911" elapsed="0.015433"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:30.113173" elapsed="0.025722"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:30.113113" elapsed="0.025946"/>
+</if>
+<kw name="Append To List" owner="Collections">
+<arg>${name_list}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:30.144154" elapsed="0.002769"/>
+</kw>
+<var name="${i}">10</var>
+<status status="PASS" start="2024-10-23T12:38:29.645756" elapsed="0.504439"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:30.159606" level="INFO">${locator} = ((//tbody//tr)[11]//td)[2]//a//div</msg>
+<var>${locator}</var>
+<arg>((//tbody//tr)[${i}]//td)[2]//a//div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-23T12:38:30.158993" elapsed="0.000872"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:30.345161" level="INFO">${name_text} = L
+Lelah Okuneva</msg>
+<var>${name_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:30.160230" elapsed="0.185194"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:30.874252" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-23T12:38:30.874714" level="FAIL">Page should have contained element '((//tbody//tr)[11]//td)[2]//a//div//img' but did not.</msg>
+<arg>${locator}//img</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2024-10-23T12:38:30.346363" elapsed="0.530840">Page should have contained element '((//tbody//tr)[11]//td)[2]//a//div//img' but did not.</status>
+</kw>
+<msg time="2024-10-23T12:38:30.877684" level="INFO">${status} = False</msg>
+<var>${status}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}//img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-23T12:38:30.345844" elapsed="0.532259"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:30.879843" level="INFO">${name_text} = Lelah Okuneva</msg>
+<var>${name_text}</var>
+<arg>r"""${name_text}""".replace("\\n","")[1:]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:30.879038" elapsed="0.001401"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:30.878451" elapsed="0.003466"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:30.878399" elapsed="0.003714"/>
+</if>
+<kw name="Append To List" owner="Collections">
+<arg>${name_list}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:30.889599" elapsed="0.001052"/>
+</kw>
+<var name="${i}">11</var>
+<status status="PASS" start="2024-10-23T12:38:30.158587" elapsed="0.732371"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:30.896478" level="INFO">${locator} = ((//tbody//tr)[12]//td)[2]//a//div</msg>
+<var>${locator}</var>
+<arg>((//tbody//tr)[${i}]//td)[2]//a//div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-23T12:38:30.895265" elapsed="0.005508"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:31.006754" level="INFO">${name_text} = D
+Dortha Greenholt</msg>
+<var>${name_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:30.901498" elapsed="0.105510"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:31.398107" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-23T12:38:31.399135" level="FAIL">Page should have contained element '((//tbody//tr)[12]//td)[2]//a//div//img' but did not.</msg>
+<arg>${locator}//img</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2024-10-23T12:38:31.008225" elapsed="0.395959">Page should have contained element '((//tbody//tr)[12]//td)[2]//a//div//img' but did not.</status>
+</kw>
+<msg time="2024-10-23T12:38:31.404901" level="INFO">${status} = False</msg>
+<var>${status}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}//img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-23T12:38:31.007385" elapsed="0.399487"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:31.408803" level="INFO">${name_text} = Dortha Greenholt</msg>
+<var>${name_text}</var>
+<arg>r"""${name_text}""".replace("\\n","")[1:]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:31.408019" elapsed="0.001141"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:31.407394" elapsed="0.002033"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:31.407320" elapsed="0.002308"/>
+</if>
+<kw name="Append To List" owner="Collections">
+<arg>${name_list}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:31.409840" elapsed="0.001539"/>
+</kw>
+<var name="${i}">12</var>
+<status status="PASS" start="2024-10-23T12:38:30.894791" elapsed="0.516870"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:31.413273" level="INFO">${locator} = ((//tbody//tr)[13]//td)[2]//a//div</msg>
+<var>${locator}</var>
+<arg>((//tbody//tr)[${i}]//td)[2]//a//div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-23T12:38:31.412480" elapsed="0.001785"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:31.544813" level="INFO">${name_text} = P
+Pablo Waelchi</msg>
+<var>${name_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:31.414745" elapsed="0.130322"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:32.032774" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-23T12:38:32.033475" level="FAIL">Page should have contained element '((//tbody//tr)[13]//td)[2]//a//div//img' but did not.</msg>
+<arg>${locator}//img</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2024-10-23T12:38:31.551113" elapsed="0.488614">Page should have contained element '((//tbody//tr)[13]//td)[2]//a//div//img' but did not.</status>
+</kw>
+<msg time="2024-10-23T12:38:32.040361" level="INFO">${status} = False</msg>
+<var>${status}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}//img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-23T12:38:31.547879" elapsed="0.495822"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:32.047230" level="INFO">${name_text} = Pablo Waelchi</msg>
+<var>${name_text}</var>
+<arg>r"""${name_text}""".replace("\\n","")[1:]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:32.046572" elapsed="0.004766"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:32.046007" elapsed="0.010629"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:32.045944" elapsed="0.010967"/>
+</if>
+<kw name="Append To List" owner="Collections">
+<arg>${name_list}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:32.057223" elapsed="0.003537"/>
+</kw>
+<var name="${i}">13</var>
+<status status="PASS" start="2024-10-23T12:38:31.412092" elapsed="0.648929"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:32.062260" level="INFO">${locator} = ((//tbody//tr)[14]//td)[2]//a//div</msg>
+<var>${locator}</var>
+<arg>((//tbody//tr)[${i}]//td)[2]//a//div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-23T12:38:32.061758" elapsed="0.001191"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:32.190740" level="INFO">${name_text} = Watson Schneider</msg>
+<var>${name_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:32.063327" elapsed="0.127702"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:32.240416" level="INFO">Current page contains element '((//tbody//tr)[14]//td)[2]//a//div//img'.</msg>
+<arg>${locator}//img</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-10-23T12:38:32.192415" elapsed="0.048668"/>
+</kw>
+<msg time="2024-10-23T12:38:32.241429" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}//img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-23T12:38:32.191426" elapsed="0.050647"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${name_text}</var>
+<arg>r"""${name_text}""".replace("\\n","")[1:]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2024-10-23T12:38:32.243690" elapsed="0.000264"/>
+</kw>
+<status status="NOT RUN" start="2024-10-23T12:38:32.242436" elapsed="0.001704"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:32.242383" elapsed="0.001877"/>
+</if>
+<kw name="Append To List" owner="Collections">
+<arg>${name_list}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:32.244439" elapsed="0.000552"/>
+</kw>
+<var name="${i}">14</var>
+<status status="PASS" start="2024-10-23T12:38:32.061398" elapsed="0.183803"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:32.255782" level="INFO">${locator} = ((//tbody//tr)[15]//td)[2]//a//div</msg>
+<var>${locator}</var>
+<arg>((//tbody//tr)[${i}]//td)[2]//a//div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-23T12:38:32.249462" elapsed="0.006629"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:32.347605" level="INFO">${name_text} = J
+Jett Schoen</msg>
+<var>${name_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:32.256494" elapsed="0.093792"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:32.672916" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-23T12:38:32.673415" level="FAIL">Page should have contained element '((//tbody//tr)[15]//td)[2]//a//div//img' but did not.</msg>
+<arg>${locator}//img</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2024-10-23T12:38:32.356075" elapsed="0.318742">Page should have contained element '((//tbody//tr)[15]//td)[2]//a//div//img' but did not.</status>
+</kw>
+<msg time="2024-10-23T12:38:32.675252" level="INFO">${status} = False</msg>
+<var>${status}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}//img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-23T12:38:32.355413" elapsed="0.326728"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:32.689906" level="INFO">${name_text} = Jett Schoen</msg>
+<var>${name_text}</var>
+<arg>r"""${name_text}""".replace("\\n","")[1:]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:32.689112" elapsed="0.001071"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:32.682735" elapsed="0.007689"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:32.682645" elapsed="0.012117"/>
+</if>
+<kw name="Append To List" owner="Collections">
+<arg>${name_list}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:32.695045" elapsed="0.005928"/>
+</kw>
+<var name="${i}">15</var>
+<status status="PASS" start="2024-10-23T12:38:32.248865" elapsed="0.452397"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:32.707718" level="INFO">${locator} = ((//tbody//tr)[16]//td)[2]//a//div</msg>
+<var>${locator}</var>
+<arg>((//tbody//tr)[${i}]//td)[2]//a//div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-23T12:38:32.704464" elapsed="0.003536"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:32.873727" level="INFO">${name_text} = L
+Lottie Dare</msg>
+<var>${name_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:32.708451" elapsed="0.166295"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:33.144377" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-23T12:38:33.144839" level="FAIL">Page should have contained element '((//tbody//tr)[16]//td)[2]//a//div//img' but did not.</msg>
+<arg>${locator}//img</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2024-10-23T12:38:32.875856" elapsed="0.272187">Page should have contained element '((//tbody//tr)[16]//td)[2]//a//div//img' but did not.</status>
+</kw>
+<msg time="2024-10-23T12:38:33.149023" level="INFO">${status} = False</msg>
+<var>${status}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}//img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-23T12:38:32.875256" elapsed="0.276414"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:33.160860" level="INFO">${name_text} = Lottie Dare</msg>
+<var>${name_text}</var>
+<arg>r"""${name_text}""".replace("\\n","")[1:]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:33.154114" elapsed="0.007277"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:33.152093" elapsed="0.009576"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:33.152036" elapsed="0.009762"/>
+</if>
+<kw name="Append To List" owner="Collections">
+<arg>${name_list}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:33.162634" elapsed="0.000636"/>
+</kw>
+<var name="${i}">16</var>
+<status status="PASS" start="2024-10-23T12:38:32.704067" elapsed="0.465539"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:33.174378" level="INFO">${locator} = ((//tbody//tr)[17]//td)[2]//a//div</msg>
+<var>${locator}</var>
+<arg>((//tbody//tr)[${i}]//td)[2]//a//div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-23T12:38:33.173732" elapsed="0.000951"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:33.265871" level="INFO">${name_text} = D
+Domenick Farrell</msg>
+<var>${name_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:33.175113" elapsed="0.094691"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:33.959611" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-14.png"&gt;&lt;img src="selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-23T12:38:33.960035" level="FAIL">Page should have contained element '((//tbody//tr)[17]//td)[2]//a//div//img' but did not.</msg>
+<arg>${locator}//img</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2024-10-23T12:38:33.274676" elapsed="0.686218">Page should have contained element '((//tbody//tr)[17]//td)[2]//a//div//img' but did not.</status>
+</kw>
+<msg time="2024-10-23T12:38:33.961279" level="INFO">${status} = False</msg>
+<var>${status}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}//img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-23T12:38:33.270368" elapsed="0.691112"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:33.969895" level="INFO">${name_text} = Domenick Farrell</msg>
+<var>${name_text}</var>
+<arg>r"""${name_text}""".replace("\\n","")[1:]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:33.965342" elapsed="0.009581"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:33.963922" elapsed="0.011273"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:33.963862" elapsed="0.011461"/>
+</if>
+<kw name="Append To List" owner="Collections">
+<arg>${name_list}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:33.975583" elapsed="0.004660"/>
+</kw>
+<var name="${i}">17</var>
+<status status="PASS" start="2024-10-23T12:38:33.170083" elapsed="0.810471"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:33.988393" level="INFO">${locator} = ((//tbody//tr)[18]//td)[2]//a//div</msg>
+<var>${locator}</var>
+<arg>((//tbody//tr)[${i}]//td)[2]//a//div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-23T12:38:33.987349" elapsed="0.001325"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:34.048041" level="INFO">${name_text} = Damian Gutmann</msg>
+<var>${name_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:33.989079" elapsed="0.059208"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:34.088763" level="INFO">Current page contains element '((//tbody//tr)[18]//td)[2]//a//div//img'.</msg>
+<arg>${locator}//img</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-10-23T12:38:34.050730" elapsed="0.038483"/>
+</kw>
+<msg time="2024-10-23T12:38:34.089573" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}//img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-23T12:38:34.049003" elapsed="0.040769"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${name_text}</var>
+<arg>r"""${name_text}""".replace("\\n","")[1:]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2024-10-23T12:38:34.090692" elapsed="0.000967"/>
+</kw>
+<status status="NOT RUN" start="2024-10-23T12:38:34.090073" elapsed="0.001843"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:34.090025" elapsed="0.002030"/>
+</if>
+<kw name="Append To List" owner="Collections">
+<arg>${name_list}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:34.092292" elapsed="0.000563"/>
+</kw>
+<var name="${i}">18</var>
+<status status="PASS" start="2024-10-23T12:38:33.982910" elapsed="0.110153"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:34.095175" level="INFO">${locator} = ((//tbody//tr)[19]//td)[2]//a//div</msg>
+<var>${locator}</var>
+<arg>((//tbody//tr)[${i}]//td)[2]//a//div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-23T12:38:34.094507" elapsed="0.003171"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:34.186506" level="INFO">${name_text} = S
+Shyanne Ward</msg>
+<var>${name_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:34.098092" elapsed="0.088686"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:34.772327" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-15.png"&gt;&lt;img src="selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-23T12:38:34.773177" level="FAIL">Page should have contained element '((//tbody//tr)[19]//td)[2]//a//div//img' but did not.</msg>
+<arg>${locator}//img</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2024-10-23T12:38:34.192966" elapsed="0.585189">Page should have contained element '((//tbody//tr)[19]//td)[2]//a//div//img' but did not.</status>
+</kw>
+<msg time="2024-10-23T12:38:34.779116" level="INFO">${status} = False</msg>
+<var>${status}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}//img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-23T12:38:34.187156" elapsed="0.592404"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:34.789470" level="INFO">${name_text} = Shyanne Ward</msg>
+<var>${name_text}</var>
+<arg>r"""${name_text}""".replace("\\n","")[1:]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:34.786531" elapsed="0.003643"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:34.779927" elapsed="0.010536"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:34.779875" elapsed="0.010748"/>
+</if>
+<kw name="Append To List" owner="Collections">
+<arg>${name_list}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:34.790858" elapsed="0.000535"/>
+</kw>
+<var name="${i}">19</var>
+<status status="PASS" start="2024-10-23T12:38:34.094097" elapsed="0.698411"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:34.795059" level="INFO">${locator} = ((//tbody//tr)[20]//td)[2]//a//div</msg>
+<var>${locator}</var>
+<arg>((//tbody//tr)[${i}]//td)[2]//a//div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-23T12:38:34.793928" elapsed="0.001399"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:34.893667" level="INFO">${name_text} = L
+Lowell Ondricka</msg>
+<var>${name_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:34.795759" elapsed="0.098896"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:36.059170" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-23T12:38:36.060156" level="FAIL">Page should have contained element '((//tbody//tr)[20]//td)[2]//a//div//img' but did not.</msg>
+<arg>${locator}//img</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2024-10-23T12:38:34.895603" elapsed="1.175021">Page should have contained element '((//tbody//tr)[20]//td)[2]//a//div//img' but did not.</status>
+</kw>
+<msg time="2024-10-23T12:38:36.077473" level="INFO">${status} = False</msg>
+<var>${status}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}//img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-23T12:38:34.895064" elapsed="1.183041"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:36.081023" level="INFO">${name_text} = Lowell Ondricka</msg>
+<var>${name_text}</var>
+<arg>r"""${name_text}""".replace("\\n","")[1:]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:36.079497" elapsed="0.001791"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:36.078898" elapsed="0.002644"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:36.078834" elapsed="0.002844"/>
+</if>
+<kw name="Append To List" owner="Collections">
+<arg>${name_list}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:36.081882" elapsed="0.000583"/>
+</kw>
+<var name="${i}">20</var>
+<status status="PASS" start="2024-10-23T12:38:34.793089" elapsed="1.292808"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:36.091763" level="INFO">${locator} = ((//tbody//tr)[21]//td)[2]//a//div</msg>
+<var>${locator}</var>
+<arg>((//tbody//tr)[${i}]//td)[2]//a//div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-23T12:38:36.089742" elapsed="0.004032"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:38.213091" level="INFO">${name_text} = Lucy Mayer</msg>
+<var>${name_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:36.094221" elapsed="2.119108"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:38.263844" level="INFO">Current page contains element '((//tbody//tr)[21]//td)[2]//a//div//img'.</msg>
+<arg>${locator}//img</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-10-23T12:38:38.214243" elapsed="0.052666"/>
+</kw>
+<msg time="2024-10-23T12:38:38.267284" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}//img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-23T12:38:38.213750" elapsed="0.056965"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${name_text}</var>
+<arg>r"""${name_text}""".replace("\\n","")[1:]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2024-10-23T12:38:38.271809" elapsed="0.000462"/>
+</kw>
+<status status="NOT RUN" start="2024-10-23T12:38:38.271109" elapsed="0.005565"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:38.271056" elapsed="0.005840"/>
+</if>
+<kw name="Append To List" owner="Collections">
+<arg>${name_list}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:38.277153" elapsed="0.000582"/>
+</kw>
+<var name="${i}">21</var>
+<status status="PASS" start="2024-10-23T12:38:36.086354" elapsed="2.191626"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:38.281407" level="INFO">${locator} = ((//tbody//tr)[22]//td)[2]//a//div</msg>
+<var>${locator}</var>
+<arg>((//tbody//tr)[${i}]//td)[2]//a//div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-23T12:38:38.280873" elapsed="0.002669"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:38.442256" level="INFO">${name_text} = W
+Wilton Schoen</msg>
+<var>${name_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:38.284222" elapsed="0.158278"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:38.980233" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-23T12:38:38.980710" level="FAIL">Page should have contained element '((//tbody//tr)[22]//td)[2]//a//div//img' but did not.</msg>
+<arg>${locator}//img</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2024-10-23T12:38:38.444154" elapsed="0.537724">Page should have contained element '((//tbody//tr)[22]//td)[2]//a//div//img' but did not.</status>
+</kw>
+<msg time="2024-10-23T12:38:38.983148" level="INFO">${status} = False</msg>
+<var>${status}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}//img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-23T12:38:38.443496" elapsed="0.540895"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:38.987249" level="INFO">${name_text} = Wilton Schoen</msg>
+<var>${name_text}</var>
+<arg>r"""${name_text}""".replace("\\n","")[1:]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:38.986020" elapsed="0.007723"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:38.984921" elapsed="0.009993"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:38.984822" elapsed="0.010268"/>
+</if>
+<kw name="Append To List" owner="Collections">
+<arg>${name_list}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:38.995339" elapsed="0.001395"/>
+</kw>
+<var name="${i}">22</var>
+<status status="PASS" start="2024-10-23T12:38:38.278401" elapsed="0.718552"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:39.000140" level="INFO">${locator} = ((//tbody//tr)[23]//td)[2]//a//div</msg>
+<var>${locator}</var>
+<arg>((//tbody//tr)[${i}]//td)[2]//a//div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-23T12:38:38.999169" elapsed="0.001986"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:39.282421" level="INFO">${name_text} = Richie Upton</msg>
+<var>${name_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:39.004087" elapsed="0.278639"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:39.344264" level="INFO">Current page contains element '((//tbody//tr)[23]//td)[2]//a//div//img'.</msg>
+<arg>${locator}//img</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-10-23T12:38:39.285759" elapsed="0.058885"/>
+</kw>
+<msg time="2024-10-23T12:38:39.345240" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}//img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-23T12:38:39.283129" elapsed="0.062485"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${name_text}</var>
+<arg>r"""${name_text}""".replace("\\n","")[1:]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2024-10-23T12:38:39.346432" elapsed="0.001144"/>
+</kw>
+<status status="NOT RUN" start="2024-10-23T12:38:39.345943" elapsed="0.001853"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:39.345896" elapsed="0.002027"/>
+</if>
+<kw name="Append To List" owner="Collections">
+<arg>${name_list}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:39.348849" elapsed="0.000758"/>
+</kw>
+<var name="${i}">23</var>
+<status status="PASS" start="2024-10-23T12:38:38.997799" elapsed="0.352052"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:39.355903" level="INFO">${locator} = ((//tbody//tr)[24]//td)[2]//a//div</msg>
+<var>${locator}</var>
+<arg>((//tbody//tr)[${i}]//td)[2]//a//div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-23T12:38:39.352131" elapsed="0.004064"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:39.414958" level="INFO">${name_text} = L
+Lauriane White</msg>
+<var>${name_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:39.356668" elapsed="0.059295"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:39.825244" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-18.png"&gt;&lt;img src="selenium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-23T12:38:39.840791" level="FAIL">Page should have contained element '((//tbody//tr)[24]//td)[2]//a//div//img' but did not.</msg>
+<arg>${locator}//img</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2024-10-23T12:38:39.419547" elapsed="0.437278">Page should have contained element '((//tbody//tr)[24]//td)[2]//a//div//img' but did not.</status>
+</kw>
+<msg time="2024-10-23T12:38:39.857221" level="INFO">${status} = False</msg>
+<var>${status}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}//img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-23T12:38:39.416440" elapsed="0.441001"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:39.899003" level="INFO">${name_text} = Lauriane White</msg>
+<var>${name_text}</var>
+<arg>r"""${name_text}""".replace("\\n","")[1:]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:39.876213" elapsed="0.023108"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:39.875627" elapsed="0.023979"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:39.875561" elapsed="0.024174"/>
+</if>
+<kw name="Append To List" owner="Collections">
+<arg>${name_list}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:39.899931" elapsed="0.000541"/>
+</kw>
+<var name="${i}">24</var>
+<status status="PASS" start="2024-10-23T12:38:39.350330" elapsed="0.565515"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:39.929826" level="INFO">${locator} = ((//tbody//tr)[25]//td)[2]//a//div</msg>
+<var>${locator}</var>
+<arg>((//tbody//tr)[${i}]//td)[2]//a//div</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-23T12:38:39.916656" elapsed="0.013460"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:40.626126" level="INFO">${name_text} = Violette Dach</msg>
+<var>${name_text}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:39.930494" elapsed="0.698935"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:40.779119" level="INFO">Current page contains element '((//tbody//tr)[25]//td)[2]//a//div//img'.</msg>
+<arg>${locator}//img</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-10-23T12:38:40.641761" elapsed="0.137717"/>
+</kw>
+<msg time="2024-10-23T12:38:40.782261" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}//img</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-23T12:38:40.630895" elapsed="0.151593"/>
+</kw>
+<if>
+<branch type="IF" condition="not ${status}">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${name_text}</var>
+<arg>r"""${name_text}""".replace("\\n","")[1:]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2024-10-23T12:38:40.795679" elapsed="0.000281"/>
+</kw>
+<status status="NOT RUN" start="2024-10-23T12:38:40.794391" elapsed="0.001788"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:40.794329" elapsed="0.014623"/>
+</if>
+<kw name="Append To List" owner="Collections">
+<arg>${name_list}</arg>
+<arg>${name_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:40.809216" elapsed="0.001882"/>
+</kw>
+<var name="${i}">25</var>
+<status status="PASS" start="2024-10-23T12:38:39.916297" elapsed="0.905881"/>
+</iter>
+<var>${i}</var>
+<value>1</value>
+<value>${length}+1</value>
+<status status="PASS" start="2024-10-23T12:38:25.975890" elapsed="14.846479"/>
+</for>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:40.834211" level="INFO">${CUSTOMERS} = ['Santa Ritchie', 'Rosanna Dibbert', 'Johnpaul Emmerich', 'Alvina Cronin', 'Frances Beahan', 'Quinn Hills', 'Marley Conn', 'Jonathan Effertz', 'Ana Lesch', 'Bernice Corwin', 'Lelah Okuneva', 'Dortha G...</msg>
+<arg>${CUSTOMERS}</arg>
+<arg>${name_list}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-10-23T12:38:40.825204" elapsed="0.009909"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:25.822580" elapsed="15.016073"/>
+</kw>
+<kw name="Check Customers With Zero Orders">
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2024-10-23T12:38:40.862484" level="INFO">Length is 25.</msg>
+<msg time="2024-10-23T12:38:40.862876" level="INFO">${length} = 25</msg>
+<var>${length}</var>
+<arg>${CUSTOMERS}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2024-10-23T12:38:40.858965" elapsed="0.013110"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-10-23T12:38:40.874704" level="INFO">${users_with_zero_orders} = []</msg>
+<var>${users_with_zero_orders}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-10-23T12:38:40.873311" elapsed="0.001831"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:40.878714" level="INFO">${index} = 0</msg>
+<var>${index}</var>
+<arg>${i} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:40.877764" elapsed="0.001374"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:41.046166" level="INFO">${order_text} = 0</msg>
+<var>${order_text}</var>
+<arg>((//tbody//tr)[${i}]//td)[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:40.879665" elapsed="0.166777"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${order_text}&quot; == &quot;0&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${users_with_zero_orders}</arg>
+<arg>${CUSTOMERS}[${index}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:41.047402" elapsed="0.002407"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:41.046872" elapsed="0.003187"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:41.046817" elapsed="0.003374"/>
+</if>
+<var name="${i}">1</var>
+<status status="PASS" start="2024-10-23T12:38:40.877216" elapsed="0.173035"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:41.053168" level="INFO">${index} = 1</msg>
+<var>${index}</var>
+<arg>${i} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:41.052012" elapsed="0.003213"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:41.135338" level="INFO">${order_text} = 0</msg>
+<var>${order_text}</var>
+<arg>((//tbody//tr)[${i}]//td)[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:41.056009" elapsed="0.083057"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${order_text}&quot; == &quot;0&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${users_with_zero_orders}</arg>
+<arg>${CUSTOMERS}[${index}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:41.144652" elapsed="0.000716"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:41.139482" elapsed="0.006821"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:41.139419" elapsed="0.007039"/>
+</if>
+<var name="${i}">2</var>
+<status status="PASS" start="2024-10-23T12:38:41.051467" elapsed="0.095087"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:41.153018" level="INFO">${index} = 2</msg>
+<var>${index}</var>
+<arg>${i} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:41.148863" elapsed="0.008989"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:41.268235" level="INFO">${order_text} = 4</msg>
+<var>${order_text}</var>
+<arg>((//tbody//tr)[${i}]//td)[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:41.158417" elapsed="0.110109"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${order_text}&quot; == &quot;0&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${users_with_zero_orders}</arg>
+<arg>${CUSTOMERS}[${index}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2024-10-23T12:38:41.269717" elapsed="0.000527"/>
+</kw>
+<status status="NOT RUN" start="2024-10-23T12:38:41.268973" elapsed="0.001489"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:41.268912" elapsed="0.001712"/>
+</if>
+<var name="${i}">3</var>
+<status status="PASS" start="2024-10-23T12:38:41.148315" elapsed="0.122374"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:41.277368" level="INFO">${index} = 3</msg>
+<var>${index}</var>
+<arg>${i} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:41.274258" elapsed="0.006030"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:41.424855" level="INFO">${order_text} = 1</msg>
+<var>${order_text}</var>
+<arg>((//tbody//tr)[${i}]//td)[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:41.280852" elapsed="0.144293"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${order_text}&quot; == &quot;0&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${users_with_zero_orders}</arg>
+<arg>${CUSTOMERS}[${index}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2024-10-23T12:38:41.426057" elapsed="0.000254"/>
+</kw>
+<status status="NOT RUN" start="2024-10-23T12:38:41.425500" elapsed="0.001026"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:41.425448" elapsed="0.001259"/>
+</if>
+<var name="${i}">4</var>
+<status status="PASS" start="2024-10-23T12:38:41.271106" elapsed="0.155667"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:41.428188" level="INFO">${index} = 4</msg>
+<var>${index}</var>
+<arg>${i} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:41.427488" elapsed="0.000976"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:41.488329" level="INFO">${order_text} = 0</msg>
+<var>${order_text}</var>
+<arg>((//tbody//tr)[${i}]//td)[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:41.428917" elapsed="0.060716"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${order_text}&quot; == &quot;0&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${users_with_zero_orders}</arg>
+<arg>${CUSTOMERS}[${index}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:41.491139" elapsed="0.000939"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:41.490055" elapsed="0.002267"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:41.489994" elapsed="0.002463"/>
+</if>
+<var name="${i}">5</var>
+<status status="PASS" start="2024-10-23T12:38:41.427115" elapsed="0.065418"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:41.495074" level="INFO">${index} = 5</msg>
+<var>${index}</var>
+<arg>${i} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:41.493933" elapsed="0.001396"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:41.565303" level="INFO">${order_text} = 0</msg>
+<var>${order_text}</var>
+<arg>((//tbody//tr)[${i}]//td)[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:41.495743" elapsed="0.069844"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${order_text}&quot; == &quot;0&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${users_with_zero_orders}</arg>
+<arg>${CUSTOMERS}[${index}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:41.566503" elapsed="0.000698"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:41.565962" elapsed="0.001468"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:41.565907" elapsed="0.001713"/>
+</if>
+<var name="${i}">6</var>
+<status status="PASS" start="2024-10-23T12:38:41.493525" elapsed="0.074159"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:41.576302" level="INFO">${index} = 6</msg>
+<var>${index}</var>
+<arg>${i} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:41.569457" elapsed="0.007107"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:41.667556" level="INFO">${order_text} = 0</msg>
+<var>${order_text}</var>
+<arg>((//tbody//tr)[${i}]//td)[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:41.576989" elapsed="0.090854"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${order_text}&quot; == &quot;0&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${users_with_zero_orders}</arg>
+<arg>${CUSTOMERS}[${index}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:41.671184" elapsed="0.003485"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:41.668287" elapsed="0.006830"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:41.668228" elapsed="0.007030"/>
+</if>
+<var name="${i}">7</var>
+<status status="PASS" start="2024-10-23T12:38:41.568914" elapsed="0.106407"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:41.676788" level="INFO">${index} = 7</msg>
+<var>${index}</var>
+<arg>${i} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:41.676082" elapsed="0.001281"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:41.796172" level="INFO">${order_text} = 0</msg>
+<var>${order_text}</var>
+<arg>((//tbody//tr)[${i}]//td)[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:41.680392" elapsed="0.116045"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${order_text}&quot; == &quot;0&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${users_with_zero_orders}</arg>
+<arg>${CUSTOMERS}[${index}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:41.797642" elapsed="0.001401"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:41.796973" elapsed="0.002311"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:41.796916" elapsed="0.002495"/>
+</if>
+<var name="${i}">8</var>
+<status status="PASS" start="2024-10-23T12:38:41.675726" elapsed="0.123749"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:41.807828" level="INFO">${index} = 8</msg>
+<var>${index}</var>
+<arg>${i} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:41.800220" elapsed="0.008719"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:42.011238" level="INFO">${order_text} = 0</msg>
+<var>${order_text}</var>
+<arg>((//tbody//tr)[${i}]//td)[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:41.809353" elapsed="0.202143"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${order_text}&quot; == &quot;0&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${users_with_zero_orders}</arg>
+<arg>${CUSTOMERS}[${index}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:42.012372" elapsed="0.004797"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:42.011880" elapsed="0.005538"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:42.011808" elapsed="0.008924"/>
+</if>
+<var name="${i}">9</var>
+<status status="PASS" start="2024-10-23T12:38:41.799859" elapsed="0.221078"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:42.034489" level="INFO">${index} = 9</msg>
+<var>${index}</var>
+<arg>${i} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:42.031303" elapsed="0.013375"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:42.209305" level="INFO">${order_text} = 0</msg>
+<var>${order_text}</var>
+<arg>((//tbody//tr)[${i}]//td)[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:42.045092" elapsed="0.168603"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${order_text}&quot; == &quot;0&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${users_with_zero_orders}</arg>
+<arg>${CUSTOMERS}[${index}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:42.219652" elapsed="0.000647"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:42.214195" elapsed="0.009487"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:42.214135" elapsed="0.009728"/>
+</if>
+<var name="${i}">10</var>
+<status status="PASS" start="2024-10-23T12:38:42.030881" elapsed="0.193047"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:42.225320" level="INFO">${index} = 10</msg>
+<var>${index}</var>
+<arg>${i} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:42.224687" elapsed="0.000880"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:42.340435" level="INFO">${order_text} = 0</msg>
+<var>${order_text}</var>
+<arg>((//tbody//tr)[${i}]//td)[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:42.225945" elapsed="0.115787"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${order_text}&quot; == &quot;0&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${users_with_zero_orders}</arg>
+<arg>${CUSTOMERS}[${index}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:42.344092" elapsed="0.001892"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:42.342208" elapsed="0.004011"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:42.342105" elapsed="0.004317"/>
+</if>
+<var name="${i}">11</var>
+<status status="PASS" start="2024-10-23T12:38:42.224316" elapsed="0.122162"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:42.350413" level="INFO">${index} = 11</msg>
+<var>${index}</var>
+<arg>${i} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:42.349587" elapsed="0.003322"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:42.588759" level="INFO">${order_text} = 0</msg>
+<var>${order_text}</var>
+<arg>((//tbody//tr)[${i}]//td)[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:42.354783" elapsed="0.234256"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${order_text}&quot; == &quot;0&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${users_with_zero_orders}</arg>
+<arg>${CUSTOMERS}[${index}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:42.592190" elapsed="0.003346"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:42.589396" elapsed="0.006631"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:42.589339" elapsed="0.006902"/>
+</if>
+<var name="${i}">12</var>
+<status status="PASS" start="2024-10-23T12:38:42.348913" elapsed="0.247439"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:42.604279" level="INFO">${index} = 12</msg>
+<var>${index}</var>
+<arg>${i} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:42.600781" elapsed="0.003971"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:42.865573" level="INFO">${order_text} = 0</msg>
+<var>${order_text}</var>
+<arg>((//tbody//tr)[${i}]//td)[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:42.605187" elapsed="0.260646"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${order_text}&quot; == &quot;0&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${users_with_zero_orders}</arg>
+<arg>${CUSTOMERS}[${index}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:42.877271" elapsed="0.001282"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:42.875606" elapsed="0.003290"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:42.875441" elapsed="0.003624"/>
+</if>
+<var name="${i}">13</var>
+<status status="PASS" start="2024-10-23T12:38:42.600275" elapsed="0.278992"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:42.881625" level="INFO">${index} = 13</msg>
+<var>${index}</var>
+<arg>${i} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:42.880809" elapsed="0.001418"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:43.234136" level="INFO">${order_text} = 0</msg>
+<var>${order_text}</var>
+<arg>((//tbody//tr)[${i}]//td)[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:42.882820" elapsed="0.351570"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${order_text}&quot; == &quot;0&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${users_with_zero_orders}</arg>
+<arg>${CUSTOMERS}[${index}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:43.240781" elapsed="0.000744"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:43.234744" elapsed="0.009130"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:43.234692" elapsed="0.009348"/>
+</if>
+<var name="${i}">14</var>
+<status status="PASS" start="2024-10-23T12:38:42.880222" elapsed="0.363883"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:43.249923" level="INFO">${index} = 14</msg>
+<var>${index}</var>
+<arg>${i} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:43.247818" elapsed="0.003266"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:43.475257" level="INFO">${order_text} = 0</msg>
+<var>${order_text}</var>
+<arg>((//tbody//tr)[${i}]//td)[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:43.251496" elapsed="0.225084"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${order_text}&quot; == &quot;0&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${users_with_zero_orders}</arg>
+<arg>${CUSTOMERS}[${index}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:43.481872" elapsed="0.000700"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:43.477809" elapsed="0.004991"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:43.477733" elapsed="0.005194"/>
+</if>
+<var name="${i}">15</var>
+<status status="PASS" start="2024-10-23T12:38:43.244453" elapsed="0.238533"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:43.486363" level="INFO">${index} = 15</msg>
+<var>${index}</var>
+<arg>${i} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:43.485420" elapsed="0.001726"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:43.616169" level="INFO">${order_text} = 0</msg>
+<var>${order_text}</var>
+<arg>((//tbody//tr)[${i}]//td)[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:43.487944" elapsed="0.128490"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${order_text}&quot; == &quot;0&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${users_with_zero_orders}</arg>
+<arg>${CUSTOMERS}[${index}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:43.628018" elapsed="0.005893"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:43.619459" elapsed="0.014764"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:43.619358" elapsed="0.015000"/>
+</if>
+<var name="${i}">16</var>
+<status status="PASS" start="2024-10-23T12:38:43.483325" elapsed="0.151093"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:43.645910" level="INFO">${index} = 16</msg>
+<var>${index}</var>
+<arg>${i} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:43.641872" elapsed="0.004295"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:43.801180" level="INFO">${order_text} = 0</msg>
+<var>${order_text}</var>
+<arg>((//tbody//tr)[${i}]//td)[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:43.646558" elapsed="0.154881"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${order_text}&quot; == &quot;0&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${users_with_zero_orders}</arg>
+<arg>${CUSTOMERS}[${index}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:43.809939" elapsed="0.000682"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:43.801805" elapsed="0.009072"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:43.801748" elapsed="0.009258"/>
+</if>
+<var name="${i}">17</var>
+<status status="PASS" start="2024-10-23T12:38:43.637611" elapsed="0.173454"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:43.817011" level="INFO">${index} = 17</msg>
+<var>${index}</var>
+<arg>${i} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:43.816328" elapsed="0.009349"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:43.961732" level="INFO">${order_text} = 3</msg>
+<var>${order_text}</var>
+<arg>((//tbody//tr)[${i}]//td)[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:43.826134" elapsed="0.136286"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${order_text}&quot; == &quot;0&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${users_with_zero_orders}</arg>
+<arg>${CUSTOMERS}[${index}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2024-10-23T12:38:43.966236" elapsed="0.000241"/>
+</kw>
+<status status="NOT RUN" start="2024-10-23T12:38:43.965607" elapsed="0.001141"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:43.964509" elapsed="0.002375"/>
+</if>
+<var name="${i}">18</var>
+<status status="PASS" start="2024-10-23T12:38:43.811408" elapsed="0.155537"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:43.968647" level="INFO">${index} = 18</msg>
+<var>${index}</var>
+<arg>${i} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:43.967821" elapsed="0.005261"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:44.127286" level="INFO">${order_text} = 0</msg>
+<var>${order_text}</var>
+<arg>((//tbody//tr)[${i}]//td)[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:43.977854" elapsed="0.152274"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${order_text}&quot; == &quot;0&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${users_with_zero_orders}</arg>
+<arg>${CUSTOMERS}[${index}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:44.131097" elapsed="0.004046"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:44.130556" elapsed="0.005155"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:44.130458" elapsed="0.005474"/>
+</if>
+<var name="${i}">19</var>
+<status status="PASS" start="2024-10-23T12:38:43.967334" elapsed="0.168717"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:44.140224" level="INFO">${index} = 19</msg>
+<var>${index}</var>
+<arg>${i} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:44.139206" elapsed="0.005477"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:44.430111" level="INFO">${order_text} = 0</msg>
+<var>${order_text}</var>
+<arg>((//tbody//tr)[${i}]//td)[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:44.145300" elapsed="0.285054"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${order_text}&quot; == &quot;0&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${users_with_zero_orders}</arg>
+<arg>${CUSTOMERS}[${index}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:44.434818" elapsed="0.000579"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:44.432808" elapsed="0.002795"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:44.432715" elapsed="0.005111"/>
+</if>
+<var name="${i}">20</var>
+<status status="PASS" start="2024-10-23T12:38:44.138637" elapsed="0.299275"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:44.444452" level="INFO">${index} = 20</msg>
+<var>${index}</var>
+<arg>${i} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:44.443689" elapsed="0.003060"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:44.714894" level="INFO">${order_text} = 3</msg>
+<var>${order_text}</var>
+<arg>((//tbody//tr)[${i}]//td)[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:44.447332" elapsed="0.269897"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${order_text}&quot; == &quot;0&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${users_with_zero_orders}</arg>
+<arg>${CUSTOMERS}[${index}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2024-10-23T12:38:44.718148" elapsed="0.000220"/>
+</kw>
+<status status="NOT RUN" start="2024-10-23T12:38:44.717612" elapsed="0.003844"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:44.717560" elapsed="0.004174"/>
+</if>
+<var name="${i}">21</var>
+<status status="PASS" start="2024-10-23T12:38:44.438268" elapsed="0.283745"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:44.726033" level="INFO">${index} = 21</msg>
+<var>${index}</var>
+<arg>${i} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:44.725059" elapsed="0.002146"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:45.161983" level="INFO">${order_text} = 0</msg>
+<var>${order_text}</var>
+<arg>((//tbody//tr)[${i}]//td)[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:44.730620" elapsed="0.431616"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${order_text}&quot; == &quot;0&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${users_with_zero_orders}</arg>
+<arg>${CUSTOMERS}[${index}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:45.163968" elapsed="0.002709"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:45.162697" elapsed="0.004245"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:45.162509" elapsed="0.004562"/>
+</if>
+<var name="${i}">22</var>
+<status status="PASS" start="2024-10-23T12:38:44.723307" elapsed="0.443824"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:45.168907" level="INFO">${index} = 22</msg>
+<var>${index}</var>
+<arg>${i} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:45.168259" elapsed="0.000872"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:45.248607" level="INFO">${order_text} = 3</msg>
+<var>${order_text}</var>
+<arg>((//tbody//tr)[${i}]//td)[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:45.172488" elapsed="0.076376"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${order_text}&quot; == &quot;0&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${users_with_zero_orders}</arg>
+<arg>${CUSTOMERS}[${index}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2024-10-23T12:38:45.249856" elapsed="0.000397"/>
+</kw>
+<status status="NOT RUN" start="2024-10-23T12:38:45.249188" elapsed="0.001264"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:45.249139" elapsed="0.001531"/>
+</if>
+<var name="${i}">23</var>
+<status status="PASS" start="2024-10-23T12:38:45.167461" elapsed="0.084259"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:45.253716" level="INFO">${index} = 23</msg>
+<var>${index}</var>
+<arg>${i} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:45.252750" elapsed="0.001428"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:45.324240" level="INFO">${order_text} = 0</msg>
+<var>${order_text}</var>
+<arg>((//tbody//tr)[${i}]//td)[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:45.256087" elapsed="0.068401"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${order_text}&quot; == &quot;0&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${users_with_zero_orders}</arg>
+<arg>${CUSTOMERS}[${index}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-10-23T12:38:45.325379" elapsed="0.003062"/>
+</kw>
+<status status="PASS" start="2024-10-23T12:38:45.324880" elapsed="0.004041"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:45.324830" elapsed="0.004255"/>
+</if>
+<var name="${i}">24</var>
+<status status="PASS" start="2024-10-23T12:38:45.252166" elapsed="0.076979"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-23T12:38:45.330788" level="INFO">${index} = 24</msg>
+<var>${index}</var>
+<arg>${i} - 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-23T12:38:45.329982" elapsed="0.001092"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T12:38:45.400738" level="INFO">${order_text} = 2</msg>
+<var>${order_text}</var>
+<arg>((//tbody//tr)[${i}]//td)[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T12:38:45.331790" elapsed="0.069188"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${order_text}&quot; == &quot;0&quot;">
+<kw name="Append To List" owner="Collections">
+<arg>${users_with_zero_orders}</arg>
+<arg>${CUSTOMERS}[${index}]</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2024-10-23T12:38:45.401823" elapsed="0.000230"/>
+</kw>
+<status status="NOT RUN" start="2024-10-23T12:38:45.401286" elapsed="0.000947"/>
+</branch>
+<status status="PASS" start="2024-10-23T12:38:45.401240" elapsed="0.001107"/>
+</if>
+<var name="${i}">25</var>
+<status status="PASS" start="2024-10-23T12:38:45.329473" elapsed="0.072933"/>
+</iter>
+<var>${i}</var>
+<value>1</value>
+<value>${length}+1</value>
+<status status="PASS" start="2024-10-23T12:38:40.875487" elapsed="4.527066"/>
+</for>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-10-23T12:38:45.408056" level="INFO">${CUSTOMERS_WITH_ZERO_ORDERS} = ['Santa Ritchie', 'Rosanna Dibbert', 'Frances Beahan', 'Quinn Hills', 'Marley Conn', 'Jonathan Effertz', 'Ana Lesch', 'Bernice Corwin', 'Lelah Okuneva', 'Dortha Greenholt', 'Pablo Waelchi', 'Watson Sc...</msg>
+<arg>${CUSTOMERS_WITH_ZERO_ORDERS}</arg>
+<arg>${users_with_zero_orders}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-10-23T12:38:45.406545" elapsed="0.006111"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Fail" owner="BuiltIn">
+<msg time="2024-10-23T12:38:45.415856" level="FAIL">Users With 0 Orders Found: ['Santa Ritchie', 'Rosanna Dibbert', 'Frances Beahan', 'Quinn Hills', 'Marley Conn', 'Jonathan Effertz', 'Ana Lesch', 'Bernice Corwin', 'Lelah Okuneva', 'Dortha Greenholt', 'Pablo Waelchi', 'Watson Schneider', 'Jett Schoen', 'Lottie Dare', 'Domenick Farrell', 'Shyanne Ward', 'Lowell Ondricka', 'Wilton Schoen', 'Lauriane White']</msg>
+<arg>Users With 0 Orders Found: ${CUSTOMERS_WITH_ZERO_ORDERS}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="FAIL" start="2024-10-23T12:38:45.413960" elapsed="0.002436">Users With 0 Orders Found: ['Santa Ritchie', 'Rosanna Dibbert', 'Frances Beahan', 'Quinn Hills', 'Marley Conn', 'Jonathan Effertz', 'Ana Lesch', 'Bernice Corwin', 'Lelah Okuneva', 'Dortha Greenholt', 'Pablo Waelchi', 'Watson Schneider', 'Jett Schoen', 'Lottie Dare', 'Domenick Farrell', 'Shyanne Ward', 'Lowell Ondricka', 'Wilton Schoen', 'Lauriane White']</status>
+</kw>
 <arg>${CUSTOMERS_WITH_ZERO_ORDERS} is not None</arg>
 <arg>Fail</arg>
 <arg>Users With 0 Orders Found: ${CUSTOMERS_WITH_ZERO_ORDERS}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-10-23T09:17:44.446119" elapsed="0.001542"/>
+<status status="FAIL" start="2024-10-23T12:38:45.413114" elapsed="0.003578">Users With 0 Orders Found: ['Santa Ritchie', 'Rosanna Dibbert', 'Frances Beahan', 'Quinn Hills', 'Marley Conn', 'Jonathan Effertz', 'Ana Lesch', 'Bernice Corwin', 'Lelah Okuneva', 'Dortha Greenholt', 'Pablo Waelchi', 'Watson Schneider', 'Jett Schoen', 'Lottie Dare', 'Domenick Farrell', 'Shyanne Ward', 'Lowell Ondricka', 'Wilton Schoen', 'Lauriane White']</status>
 </kw>
-<status status="PASS" start="2024-10-23T09:17:44.443044" elapsed="0.005301"/>
+<status status="FAIL" start="2024-10-23T12:38:40.845978" elapsed="4.571075">Users With 0 Orders Found: ['Santa Ritchie', 'Rosanna Dibbert', 'Frances Beahan', 'Quinn Hills', 'Marley Conn', 'Jonathan Effertz', 'Ana Lesch', 'Bernice Corwin', 'Lelah Okuneva', 'Dortha Greenholt', 'Pablo Waelchi', 'Watson Schneider', 'Jett Schoen', 'Lottie Dare', 'Domenick Farrell', 'Shyanne Ward', 'Lowell Ondricka', 'Wilton Schoen', 'Lauriane White']</status>
 </kw>
-<status status="PASS" start="2024-10-23T09:17:44.437400" elapsed="0.011822"/>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-10-23T12:38:45.417993" elapsed="0.000956"/>
+</kw>
+<status status="FAIL" start="2024-10-23T12:38:16.769536" elapsed="28.653752">Users With 0 Orders Found: ['Santa Ritchie', 'Rosanna Dibbert', 'Frances Beahan', 'Quinn Hills', 'Marley Conn', 'Jonathan Effertz', 'Ana Lesch', 'Bernice Corwin', 'Lelah Okuneva', 'Dortha Greenholt', 'Pablo Waelchi', 'Watson Schneider', 'Jett Schoen', 'Lottie Dare', 'Domenick Farrell', 'Shyanne Ward', 'Lowell Ondricka', 'Wilton Schoen', 'Lauriane White']</status>
 </test>
 <kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2024-10-23T09:17:44.451984" elapsed="0.320023"/>
+<status status="PASS" start="2024-10-23T12:38:45.431433" elapsed="2.266424"/>
 </kw>
-<status status="PASS" start="2024-10-23T09:17:37.670796" elapsed="7.101530"/>
+<status status="FAIL" start="2024-10-23T12:38:00.425919" elapsed="47.272222"/>
 </suite>
-<status status="PASS" start="2024-10-23T09:17:37.616797" elapsed="7.161853"/>
+<status status="FAIL" start="2024-10-23T12:38:00.404573" elapsed="47.302892"/>
+</suite>
+<status status="FAIL" start="2024-10-23T12:38:00.283811" elapsed="47.434169"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Robo-Framework-App">Robo-Framework-App</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="Test">Robo-Framework-App.Test</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Robo-Framework-Assessment">Robo-Framework-Assessment</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Test">Robo-Framework-Assessment.Test</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Test">Robo-Framework-Assessment.Test.Test</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2024-10-23T09:17:38.015535" level="WARN">Imported resource file '/home/citco/Repositories/robo-framework-app/resource/SampleResource.resource' is empty.</msg>
 </errors>
 </robot>
